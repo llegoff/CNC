@@ -12,19 +12,34 @@ module lcd12864 () {
     cube([72,40,8]);
 }
 
+module led(){
+  color ("red")  union () {
+    cylinder ( h=2 , r=3.1);
+    translate ([0,0,2]) cylinder ( h=6 , r=2.6);
+    translate ([0,0,8]) sphere (r=2.6);
+  }
+  color ("grey") union () {
+    translate ([0,0.9,0]) cube ([10,0.9,0.9]);
+    translate ([0,-1.6,0]) cube ([10,0.9,0.9]);
+  }
+}
+
 module encodeur() {
   color ("lightgrey") union () {
-    translate ([-6.2,-6.6,-5])cube([12.4,13.2,5]);
+    translate ([-6.2,-6.6,-7])cube([12.4,13.2,7]);
     cylinder(h=7, r=3.5);
-    translate ([6.2,-1,-8.5])cube([0.5,2,4]);
-    translate ([-6.7,-1,-8.5])cube([0.5,2,4]);
-    translate ([0,6.6,-8.5])cube([1,0.5,4]);
-    translate ([-2.5,6.6,-8.5])cube([1,0.5,4]);
-    translate ([2.5,6.6,-8.5])cube([1,0.5,4]);
-    translate ([-2.5,-6.85,-8.5])cube([1,0.5,4]);
-    translate ([2.5,-6.85,-8.5])cube([1,0.5,4]);
+    translate ([6.2,-1,-10.5])cube([0.5,2,4]);
+    translate ([-6.7,-1,-10.5])cube([0.5,2,4]);
+    translate ([0,6.6,-10.5])cube([1,0.5,4]);
+    translate ([-2.5,6.6,-10.5])cube([1,0.5,4]);
+    translate ([2.5,6.6,-10.5])cube([1,0.5,4]);
+    translate ([-2.5,-6.85,-10.5])cube([1,0.5,4]);
+    translate ([2.5,-6.85,-10.5])cube([1,0.5,4]);
   }
   color ("grey")  cylinder(h=20, r=3);
+  color ("black") translate ([-3,19.5,-7]) cube([6,6,3.2]);
+  color ("black") translate ([0,22.5,-3.8]) cylinder(h=1.5, r=1.7);
+
 }
 
 module tb6560_4axes(){
@@ -41,14 +56,17 @@ module tb6560_4axes(){
 
 // *************** encodeur****************************
 translate ([245,140,0]) encodeur();
+
 // *************** bouton *****************************
-color("white")  union() {
-  linear_extrude(height = 12, center = false, convexity = 10)
-    import(file = "smoothiebox.dxf", layer = "bouton1");
-  translate([0,0,-2]) 
-    linear_extrude(height = 2, center = false, convexity = 10)
-      import(file = "smoothiebox.dxf", layer = "bouton2");
-}
+color("white")  
+  union() {
+    linear_extrude(height = 12, center = false, convexity = 10)
+      import(file = "smoothiebox.dxf", layer = "bouton1");
+    translate([0,0,-1.5]) 
+      linear_extrude(height = 1.5, center = false, convexity = 10)
+        import(file = "smoothiebox.dxf", layer = "bouton2");
+  }
+  translate ([244.8,162.5,-1.5]) led();
 
 // *************** Pilote 4 axes***********************
 translate([65,25,-87])  tb6560_4axes();
