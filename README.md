@@ -3,6 +3,8 @@ CNC
 
 Fraiseuse à commande numérique
 ------------------------------
+![CNC](cnc1.PNG)
+![Vue eclatee](cnc2.PNG)
 
 SmoothieBox
 -----------

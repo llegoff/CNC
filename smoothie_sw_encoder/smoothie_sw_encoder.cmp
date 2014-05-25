@@ -1,0 +1,38 @@
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 23/05/2014 12:48:53
+
+BeginCmp
+TimeStamp = /537F26FF;
+Reference = P1;
+ValeurCmp = CONN_5;
+IdModule  = SIL-5;
+EndCmp
+
+BeginCmp
+TimeStamp = /537F2590;
+Reference = P2;
+ValeurCmp = CONN_2;
+IdModule  = SIL-2;
+EndCmp
+
+BeginCmp
+TimeStamp = /537F2546;
+Reference = S1;
+ValeurCmp = ENCODEUR_ROTATIF;
+IdModule  = ENCODEUR_rotatif;
+EndCmp
+
+BeginCmp
+TimeStamp = /537F256C;
+Reference = SP1;
+ValeurCmp = SPEAKER;
+IdModule  = BUZZER;
+EndCmp
+
+BeginCmp
+TimeStamp = /537F2557;
+Reference = SW1;
+ValeurCmp = SW_PUSH;
+IdModule  = SW_PUSH_SMALL;
+EndCmp
+
+EndListe
