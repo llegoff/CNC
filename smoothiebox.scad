@@ -39,7 +39,8 @@ module encodeur() {
   color ("grey")  cylinder(h=20, r=3);
   color ("black") translate ([-3,19.5,-7]) cube([6,6,3.2]);
   color ("black") translate ([0,22.5,-3.8]) cylinder(h=1.5, r=1.7);
-
+  color ("white") translate ([0,0,11])import ("smoothiebox_knob.stl");
+  color ("yellowgreen") translate([-15,-12,-8.6]) cube([30,45,1.6]);
 }
 
 module tb6560_4axes(){
@@ -69,7 +70,7 @@ color("white")
   translate ([244.8,162.5,-1.5]) led();
 
 // *************** Pilote 4 axes***********************
-translate([65,25,-87])  tb6560_4axes();
+translate([250,165,-87]) rotate([0,0,180])  tb6560_4axes();
 // *************** LCD ********************************
 translate ([130,105,-2]) lcd12864();
 
